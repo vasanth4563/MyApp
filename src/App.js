@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import F1 from './Components/File1';
+import Books from './Components/Books';
+import Buyed from './Components/Buyed';
+import Press1 from "./Components/Press";
+import Myacc from "./Components/Myacc";
+import About from "./Components/About";
+import Appone from './Components/Maincart';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <>
+  <BrowserRouter>
+  <Routes>
+    <Route index element={<F1 />} />
+    <Route path='/F1' element={<F1 />}></Route>
+    <Route path='/Books' element={<Books />}></Route>
+    <Route path='/Buyed' element={<Buyed />}> </Route>
+    <Route path='/Press1' element={<Press1/>}> </Route>
+    <Route path='/Myacc' element={<Myacc />}></Route>
+    <Route path='/About' element={<About />}></Route>
+    <Route path='/Appone' element={<Appone />}></Route>
+   
+
+  </Routes>
+  </BrowserRouter>
+  
+  </>
+     );
 }
 
 export default App;
